@@ -1,0 +1,74 @@
+@font-face { font-family: 'LatoLight';   src: url('fonts/Lato-Light.ttf'); }
+@font-face { font-family: 'LatoRegular'; src: url('fonts/Lato-Regular.ttf'); }
+
+body{
+	text-align: center;
+	font: 10px;
+	color: #0a0a0a;
+	background-color: #c7deed;
+	font-family: 'LatoRegular';
+}
+
+p{
+	margin: 0px;
+}
+
+.block{
+	margin: 60px auto;
+	border: 1px solid #70a8dd;
+	width: 500px;
+	height: 420px;
+	background-color: #8fc0e7;
+}
+
+.title{
+	margin: 0px;
+	padding: 10px;
+	font: 18px;
+}
+
+.chatBox{
+	text-align: left;
+	margin: 0px 20px;
+	height: 300px;
+	padding: 0px 10px;
+	background-color: #c7deed;
+	border: 1px solid #70a8dd;
+	overflow: auto;
+}
+
+form{
+	padding: 20px 0px;
+}
+
+form > textarea{
+	margin-left: 20px;
+	border: 1px solid #70a8dd;
+	width: 403px;
+	height: 30px;
+	background-color: #c7deed;
+	resize: none;
+	cursor: text;
+	outline: none;
+	float: left;
+	font: 10px;
+	font-family: 'LatoRegular';
+}
+
+form > input[type=submit]{
+	margin-right: 20px;
+	border: 1px solid #70a8dd;
+	background-color: #c7deed;
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+	width: 47px;
+	height: 30px;
+	float: right;
+}
+
+form > input[type=submit]:hover{
+	border: 1px solid #c7deed;
+	background-color: #8fc0e7;
+	text-decoration: bold;
+}
