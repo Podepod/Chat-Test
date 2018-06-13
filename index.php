@@ -26,9 +26,9 @@
 			<p><b>Test:</b> usernames moete ook nog gekoze kunne worde</p>
 			<hr>
 			<p><b>Test:</b> Dees is het laatste bericht verstuurd door de user, omdat dit ding nogni verbonde is met de database kan ik dus alleen net verstuurde berichten echoën met php
-			<p><b>Last typed:</b> <?php $lastMSG = $_POST['UserMSG']; echo $lastMSG ?>
+			<p id="last"><b>Last typed:</b> <?php $lastMSG = $_POST['UserMSG']; echo $lastMSG ?>
 		</div>
-		<form action="index.php" method="post">
+		<form action="msgCreate.php" method="post">
 			<textarea name="UserMSG" placeholder="Type your message..."></textarea>
 			<input type="submit" value="Send">
 		</form>
