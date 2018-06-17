@@ -10,23 +10,18 @@
 			<p>Chatroom TEST #1</p>
 		</div>
 		<div class="chatBox">
-			<p><b>Podepod:</b> Lolz</p>
-			<p><b>Test:</b> Dees is nog ni aant werke</p>
-			<p><b>Podepod:</b> inderdaad</p>
-			<p><b>Test:</b> Dees is gewoon om de style is te teste en te zien of die werkt</p>
-			<p><b>Podepod:</b> er zijn nog heel wa aanpassinge da k ga moete doen</p>
-			<p><b>Test:</b> Ma da komt wel</p>
-			<p><b>Podepod:</b> k moet bijvoorbeeld de username en de text van de user een aparte ding make</p>
-			<p><b>Test:</b> anders ga ik zo geen tekstballonne kunne make</p>
-			<p><b>Podepod:</b> ma zo moeilijk kan de ni zijn nrml</p>
-			<p><b>Test:</b> en ik moet dees ding ook nog koppele aan mn database</p>
-			<p><b>Podepod:</b> ma ook da komt nog wel</p>
-			<p><b>Test:</b> dees moet ook altijd update as er een nieuw bericht wordt gestuurd</p>
-			<p><b>Podepod:</b> ma da weet ik nog ni hoe k da percies ga doen</p>
-			<p><b>Test:</b> usernames moete ook nog gekoze kunne worde</p>
-			<hr>
-			<p><b>Test:</b> Dees is het laatste bericht verstuurd door de user, omdat dit ding nogni verbonde is met de database kan ik dus alleen net verstuurde berichten echoën met php
-			<p id="last"><b>Last typed:</b> <?php $lastMSG = $_POST['UserMSG']; echo $lastMSG ?>
+			<?php
+          $username="root";$password="";$servername = "localhost";
+          $database="chat_test";mysql_connect($servername,$username,$password);
+          @mysql_select_db($database) or die( "Unable to select database");
+          $query="SELECT * FROM chat";$result=mysql_query($query);
+          $num=mysql_numrows($result);mysql_close();
+          $i=0;while ($i < $num) {$readUser=mysql_result($result,$i,"MsgUsername");
+          $readMsg=mysql_result($result,$i,"MsgCont");
+          echo "
+			<p><b>$readUser:</b> $readMsg</p>
+		  ";$i++;}?>
+			<div id="last"></div>
 		</div>
 		<form action="msgCreate.php" method="post">
 			<textarea name="UserMSG" placeholder="Type your message..."></textarea>
